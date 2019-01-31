@@ -5,7 +5,9 @@ import (
 	"github.com/sandovalrr/mediacutter"
 )
 
-var log = capnslog.NewPackageLogger(mediacutter.Repo, "audio/cutter")
+var (
+	log = capnslog.NewPackageLogger(mediacutter.Repo, "audio/cutter")
+)
 
 //Audio audio model
 type Audio struct {
