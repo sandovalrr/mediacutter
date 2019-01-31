@@ -16,7 +16,7 @@ func IsWindows() bool {
 	return runtime.GOOS == "windows"
 }
 
-//ExecCmd execute a command con terminal
+//ExecCmd execute a command in terminal
 func ExecCmd(cmd string, params ...interface{}) (string, error) {
 
 	command := fmt.Sprintf(cmd, params...)
