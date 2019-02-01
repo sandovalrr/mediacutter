@@ -4,4 +4,3 @@ pkg/*
 vendor/*
 bin/*
 assets/chunks/*
-*.avi
