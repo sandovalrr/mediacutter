@@ -20,7 +20,7 @@ var (
 	log = capnslog.NewPackageLogger(models.Repo, "audio/cutter")
 )
 
-//Cutter audio model
+//Cutter cutter model
 type Cutter struct {
 	Options models.CutterOption
 	Repo    interfaces.CutterRepository
@@ -44,7 +44,7 @@ func NewVideoCutter(options models.CutterOption) *Cutter {
 	}
 }
 
-//Len Returns audio length in seconds
+//Len Returns media length in seconds
 func (cutter *Cutter) Len() (time.Duration, error) {
 	response := time.Duration(0)
 	command := cutter.Repo.LenCommand(cutter.Options.Name)
@@ -62,7 +62,7 @@ func (cutter *Cutter) Len() (time.Duration, error) {
 	return response, nil
 }
 
-//Split split audio and returns an error if something wrong happen
+//Split split media file and returns an error if something wrong happen
 func (cutter *Cutter) Split() error {
 
 	ext := filepath.Ext(cutter.Options.Name)
