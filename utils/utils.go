@@ -20,7 +20,7 @@ func IsWindows() bool {
 func ExecCmd(cmd string, params ...interface{}) (string, error) {
 
 	command := fmt.Sprintf(cmd, params...)
-	log.Infof("Running Command => ", command)
+	log.Infof("Running Command => %s", command)
 
 	var terminal string
 	var path string
@@ -39,7 +39,7 @@ func ExecCmd(cmd string, params ...interface{}) (string, error) {
 
 	if data != nil && len(data) > 0 {
 		result = string(data)
-		log.Infof("Receiving from sh => ", result)
+		log.Infof("Receiving from sh => %s", result)
 	}
 
 	return result, err
