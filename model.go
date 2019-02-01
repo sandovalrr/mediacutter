@@ -7,6 +7,7 @@ var Repo = "github.com/sandovalrr/mediacutter"
 
 //CutterOption cutter options
 type CutterOption struct {
-	Name    string
-	Samples time.Duration
+	Name      string
+	Samples   time.Duration
+	ChunkPath string
 }
