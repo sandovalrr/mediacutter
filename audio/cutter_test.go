@@ -9,7 +9,7 @@ import (
 )
 
 var samples = time.Duration(15)
-var fileName = "../assets/audio_test.mp3"
+var fileName = "../assets/piano2.wav"
 
 func TestNewAudioCutter(t *testing.T) {
 	cutter := audio.NewAudioCutter(mediacutter.CutterOption{
