@@ -1,4 +1,4 @@
-package mediacutter
+package models
 
 import "time"
 
