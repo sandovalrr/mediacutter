@@ -30,7 +30,7 @@ func TestLen(t *testing.T) {
 
 	len, err := cutter.Len()
 	if err != nil {
-		t.Errorf("Not expection errors, but found %v", err)
+		t.Errorf("Not errors expected, but found %v", err)
 	}
 	if len == time.Duration(0) {
 		t.Error("Expected file length > 0")
