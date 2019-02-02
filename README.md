@@ -48,7 +48,7 @@ import (
 ...
 ...
 
-videoCutter := cutter.NewAudioCutter(model.CutterOption{
+videoCutter := cutter.NewVideoCutter(model.CutterOption{
   Path: "path_to_video.avi",
   Samples: 15,
   ChunkPath: "path_to_output_folder",
