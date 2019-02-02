@@ -18,14 +18,14 @@ $ glide get github.com/sandovalrr/mediacutter
 
 ### Audio Cutter
 
-```
+```go
 import (
   "github.com/sandovalrr/mediacutter/cutter"
   "github.com/sandovalrr/mediacutter/model"
 )
 
-...
-...
+//...
+//...
 
 audioCutter := cutter.NewAudioCutter(model.CutterOption{
   Path: "path_to_audio.mp3",
@@ -39,14 +39,14 @@ audioCutter.Split()
 
 ### Video Cutter
 
-```
+```go
 import (
   "github.com/sandovalrr/mediacutter/cutter"
   "github.com/sandovalrr/mediacutter/model"
 )
 
-...
-...
+//...
+//...
 
 videoCutter := cutter.NewVideoCutter(model.CutterOption{
   Path: "path_to_video.avi",
