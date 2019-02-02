@@ -48,7 +48,7 @@ func NewVideoCutter(options models.CutterOption) *Cutter {
 //Len Returns media length in seconds
 func (cutter *Cutter) Len() (time.Duration, error) {
 	response := time.Duration(0)
-	command := cutter.Repo.LenCommand(cutter.Options.Name)
+	command := cutter.Repo.LenCommand(cutter.Options.Path)
 	resp, err := utils.ExecCmd(command)
 	if err != nil {
 		return response, err
@@ -66,7 +66,7 @@ func (cutter *Cutter) Len() (time.Duration, error) {
 //Split split media file and returns an error if something wrong happen
 func (cutter *Cutter) Split() error {
 
-	ext := filepath.Ext(cutter.Options.Name)
+	ext := filepath.Ext(cutter.Options.Path)
 
 	audioLen, err := cutter.Len()
 	if err != nil {
@@ -94,7 +94,7 @@ func (cutter *Cutter) Split() error {
 			continue
 		}
 
-		command := cutter.Repo.CutterCommand(cutter.Options.Name, chunkPath, start, end)
+		command := cutter.Repo.CutterCommand(cutter.Options.Path, chunkPath, start, end)
 		_, err = utils.ExecCmd(command)
 
 		if err != nil {

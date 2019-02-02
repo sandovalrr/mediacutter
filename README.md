@@ -14,4 +14,56 @@ or using glide
 $ glide get github.com/sandovalrr/mediacutter
 ```
 
-### Usage
+## Usage
+
+### Audio Cutter
+
+```
+import (
+  "github.com/sandovalrr/mediacutter/cutter"
+  "github.com/sandovalrr/mediacutter/model"
+)
+
+...
+...
+
+audioCutter := cutter.NewAudioCutter(model.CutterOption{
+  Path: "path_to_audio.mp3",
+  Samples: 15,
+  ChunkPath: "path_to_output_folder",
+})
+
+audioCutter.Split()
+
+```
+
+### Video Cutter
+
+```
+import (
+  "github.com/sandovalrr/mediacutter/cutter"
+  "github.com/sandovalrr/mediacutter/model"
+)
+
+...
+...
+
+videoCutter := cutter.NewAudioCutter(model.CutterOption{
+  Path: "path_to_video.avi",
+  Samples: 15,
+  ChunkPath: "path_to_output_folder",
+})
+
+videoCutter.Split()
+```
+
+## API
+
+### CutterOption
+
+| Property  | Description                                      | Type          |
+| --------- | ------------------------------------------------ | ------------- |
+| Path      | Path to source media file                        | string        |
+| Samples   | Time duration in seconds for each splitted chunk | time.Duration |
+| ChunkPath | Path to output chunk folder                      |
+

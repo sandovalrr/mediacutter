@@ -15,7 +15,7 @@ var chunkPath = "../assets/chunks"
 
 func TestNewAudioCutter(t *testing.T) {
 	cutter := cutter.NewAudioCutter(models.CutterOption{
-		Name:      audioPath,
+		Path:      audioPath,
 		Samples:   samples,
 		ChunkPath: chunkPath,
 	})
@@ -31,7 +31,7 @@ func TestNewAudioCutter(t *testing.T) {
 
 func TestNewVideoCutter(t *testing.T) {
 	cutter := cutter.NewVideoCutter(models.CutterOption{
-		Name:      videoPath,
+		Path:      videoPath,
 		Samples:   samples,
 		ChunkPath: chunkPath,
 	})
@@ -47,7 +47,7 @@ func TestNewVideoCutter(t *testing.T) {
 
 func TestAudioLen(t *testing.T) {
 	cutter := cutter.NewAudioCutter(models.CutterOption{
-		Name:      audioPath,
+		Path:      audioPath,
 		Samples:   samples,
 		ChunkPath: chunkPath,
 	})
@@ -63,7 +63,7 @@ func TestAudioLen(t *testing.T) {
 
 func TestVideoLen(t *testing.T) {
 	cutter := cutter.NewVideoCutter(models.CutterOption{
-		Name:      videoPath,
+		Path:      videoPath,
 		Samples:   samples,
 		ChunkPath: chunkPath,
 	})
@@ -78,7 +78,7 @@ func TestVideoLen(t *testing.T) {
 
 func TestAudioSplit(t *testing.T) {
 	cutter := cutter.NewAudioCutter(models.CutterOption{
-		Name:      audioPath,
+		Path:      audioPath,
 		Samples:   samples,
 		ChunkPath: chunkPath,
 	})
@@ -90,7 +90,7 @@ func TestAudioSplit(t *testing.T) {
 }
 func TestVideoSplit(t *testing.T) {
 	cutter := cutter.NewVideoCutter(models.CutterOption{
-		Name:      videoPath,
+		Path:      videoPath,
 		Samples:   samples,
 		ChunkPath: chunkPath,
 	})
