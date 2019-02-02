@@ -2,6 +2,7 @@ package cutter
 
 import (
 	"fmt"
+	"os"
 	"path/filepath"
 	"strconv"
 	"strings"
@@ -77,7 +78,7 @@ func (cutter *Cutter) Split() error {
 		totalChunks++
 	}
 
-	chunkName := "%d-%d." + ext
+	chunkName := "%d-%d" + ext
 	start := 0
 	end := int(cutter.Options.Samples)
 	if totalChunks == 1 {
@@ -85,10 +86,16 @@ func (cutter *Cutter) Split() error {
 	}
 	for i := 0; i < totalChunks; i++ {
 
-		chuckPath := filepath.Join(cutter.Options.ChunkPath, fmt.Sprintf(chunkName, start, end))
+		chunkPath := filepath.Join(cutter.Options.ChunkPath, fmt.Sprintf(chunkName, start, end))
 
-		command := cutter.Repo.CutterCommand(cutter.Options.Name, chuckPath, start, end)
-		_, err := utils.ExecCmd(command)
+		err := os.Remove(chunkPath)
+		if err != nil {
+			log.Errorf("Error Trying to remove existing file %s => %v", chunkPath, err)
+			continue
+		}
+
+		command := cutter.Repo.CutterCommand(cutter.Options.Name, chunkPath, start, end)
+		_, err = utils.ExecCmd(command)
 
 		if err != nil {
 			log.Errorf("Receiving Error from sh => %v", err)
