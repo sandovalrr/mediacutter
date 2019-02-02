@@ -69,8 +69,11 @@ videoCutter.Split()
 
 ### Cutter
 
-| Property | Description                                                                   | Type     | Parameters |
-| -------- | ----------------------------------------------------------------------------- | -------- | ---------- |
-| Len      | Function that returns duration of media in seconds                            | Function | -          |
-| Split    | Function that split media file and returns an error if something wrong happen | Function | -          |
+| Property | Description                                                                   | Type             | Parameters |
+| -------- | ----------------------------------------------------------------------------- | ---------------- | ---------- |
+| Len      | Function that returns duration of media in seconds                            | Function         | -          |
+| Split    | Function that split media file and returns an error if something wrong happen | Function         | -          |
+| Option   | Object instance of CutterOption                                               | CutterOption     | -          |
+| Repo     | Object instance of CutterRepository                                           | CutterRepository | -          |
+
 
