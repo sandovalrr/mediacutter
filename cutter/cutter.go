@@ -88,11 +88,7 @@ func (cutter *Cutter) Split() error {
 
 		chunkPath := filepath.Join(cutter.Options.ChunkPath, fmt.Sprintf(chunkName, start, end))
 
-		err := os.Remove(chunkPath)
-		if err != nil {
-			log.Errorf("Error Trying to remove existing file %s => %v", chunkPath, err)
-			continue
-		}
+		os.Remove(chunkPath)
 
 		command := cutter.Repo.CutterCommand(cutter.Options.Path, chunkPath, start, end)
 		_, err = utils.ExecCmd(command)
