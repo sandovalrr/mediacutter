@@ -8,9 +8,9 @@ import (
 	"github.com/sandovalrr/mediacutter/models"
 )
 
-var samples = time.Duration(4)
+var samples = time.Duration(10)
 var audioPath = "../assets/piano2.wav"
-var videoPath = "../assets/video.avi"
+var videoPath = "../assets/DVR-1_CH4_257_1_4_20190130232601_005.avi"
 var chunkPath = "../assets/chunks"
 
 func TestNewAudioCutter(t *testing.T) {
