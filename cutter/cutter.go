@@ -6,6 +6,7 @@ import (
 	"path/filepath"
 	"strconv"
 	"strings"
+	"sync"
 	"time"
 
 	"github.com/sandovalrr/mediacutter/audio"
@@ -63,9 +64,13 @@ func (cutter *Cutter) Len() (time.Duration, error) {
 	return response, nil
 }
 
+var mutex = &sync.Mutex{}
+
 //Split split media file and returns an error if something wrong happen
 func (cutter *Cutter) Split() error {
 
+	mutex.Lock()
+	defer mutex.Unlock()
 	ext := filepath.Ext(cutter.Options.Path)
 
 	audioLen, err := cutter.Len()

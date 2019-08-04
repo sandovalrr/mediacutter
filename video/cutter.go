@@ -47,5 +47,5 @@ func (video *Video) LenCommand(path string) string {
 func (video *Video) CutterCommand(filePath, outputPath string, start, end int) string {
 	sTime := utils.ToTimeFormat(start)
 	eTime := utils.ToTimeFormat(end - start)
-	return fmt.Sprintf("%s -i %s -ss %s -t %s -async 1 -strict -2 %s", video.ProgramCommand(), filePath, sTime, eTime, outputPath)
+	return fmt.Sprintf("%s -y -i %s -ss %s -t %s -async 1 -strict -2 %s", video.ProgramCommand(), filePath, sTime, eTime, outputPath)
 }
